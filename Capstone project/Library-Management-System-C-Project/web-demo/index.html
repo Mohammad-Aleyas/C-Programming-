@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Web UI Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+    <div id="toast" class="fixed top-5 right-5 z-50 transform translate-x-full transition-transform duration-300 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <div>
+            <h4 id="toast-title" class="font-semibold text-sm">Success</h4>
+            <p id="toast-message" class="text-xs text-slate-300">Done.</p>
+        </div>
+    </div>
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-40 no-print">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center"><i class="fa-solid fa-book-bookmark text-2xl"></i></div>
+                <div>
+                    <h1 class="text-xl font-bold">Library Management System</h1>
+                    <p class="text-xs text-blue-400">Web UI Prototype • C Core in /src</p>
+                </div>
+            </div>
+            <span class="text-xs text-slate-300">Mohammad Aleyas, K. Santhosh Kumar, B. Mahesh Kumar</span>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-2xl border"><p class="text-xs font-bold text-slate-400 uppercase">Total Books</p><h3 id="stat-books" class="text-3xl font-extrabold">0</h3></div>
+            <div class="bg-white p-6 rounded-2xl border"><p class="text-xs font-bold text-slate-400 uppercase">Active Members</p><h3 id="stat-members" class="text-3xl font-extrabold">0</h3></div>
+            <div class="bg-white p-6 rounded-2xl border"><p class="text-xs font-bold text-slate-400 uppercase">Books Issued</p><h3 id="stat-issued" class="text-3xl font-extrabold">0</h3></div>
+            <div class="bg-white p-6 rounded-2xl border"><p class="text-xs font-bold text-slate-400 uppercase">Overdue Fines</p><h3 id="stat-fines" class="text-3xl font-extrabold">₹0</h3></div>
+        </div>
+        <div class="bg-white rounded-2xl border p-6">
+            <h2 class="text-lg font-bold mb-4">Book Catalog Preview</h2>
+            <table class="w-full text-left border-collapse text-sm">
+                <thead><tr class="border-b bg-slate-50 text-xs uppercase text-slate-400"><th class="p-3">ID</th><th class="p-3">Title &amp; Author</th><th class="p-3">Category</th><th class="p-3">Total</th><th class="p-3">Available</th></tr></thead>
+                <tbody id="books-table-body" class="divide-y"></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/demo.js"></script>
+</body>
+</html>
